@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>
+Heart Stroke Prediction
+</title>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<style>
+    *{
+       box-sizing: border-box;
+   }
+   body {
+       font-family: 'Montserrat';
+       } 
+   .header{
+       top:0;
+       margin:0px;
+       left:opx;
+       right:0px;
+       position:fixed;
+       background-color: black;
+       color: white;
+       box-shadow: 0px 8px 4px grey;
+       overflow: hidden;
+       padding: 15px;
+       font-size: 2vw;
+       width: 100%;
+       text-align: left;
+       padding-left: 100px;
+       opacity:0.9;
+       }
+   .header_text{
+       font-size:40px;
+       font-size:40px;
+       text-align:center;
+       }
+   .content{
+       margin-top:100px;
+       }
+   .text{
+       font-size:20px;
+       margin-top:10px;
+       text-align:center;
+       }
+   input[type=number],select{
+       width: 50%;
+       padding: 12px 20px;
+       margin: 8px 0;
+       display: inline-block;
+       border: 1px solid #ccc;
+       border-radius: 4px;
+       box-sizing: border-box;
+       }
+   input[type=text],select{
+       width: 50%;
+       padding: 12px 20px;
+       margin: 8px 0;
+       display: inline-block;
+       border: 1px solid #ccc;
+       border-radius: 4px;
+       box-sizing: border-box;
+       }
+   input[type=submit],select{
+       width: 50%;
+       background-color: #000000;
+       color: white;
+       padding: 14px 20px;
+       margin-bottom: 20px;
+       font-size:25px;
+       color:red;
+       }
+</style>
+</head> 
+<body align=center>
+<div class="header">
+<div>Stroke Prediction</div>
+</div>
+<div class="content">
+<div class="header_text">Stroke Prediction</div>
+<div class="text">Fill in and below details to predict whether a person might get a stroke.</div>
+<div class="result">
+{{prediction_text}}
+</div>
+<form action="{{ url_for('y_predict') }}" method="POST">
+  <input type="text" id="gender" name="Gender" placeholder="Gender">
+  <input type="number" id="age" name="Age" placeholder="age">
+  <input type="number" id="hypertension" name="Hypertension" placeholder="Hypertension(0/1)">
+  <input type="number" id="heart_disease" name="Heart Disease" placeholder="Heart_disease(0/1)">
+  <input type="text" id="ever_married" name="Ever Married" placeholder="Ever_married">
+  <input type="text" id="work_type" name="Work Type" placeholder="Work Type">
+  <input type="text" id="Residence_type" name="Residence Type" placeholder="Residence Type">
+  <input type="number" step="any" id="avg_glucose_level" name="Avg Glucose Level" placeholder="Avg Glucose Level">
+  <input type="number" step="any" id="bmi" name="BMI" placeholder="BMI">
+  <input type="text" id="smoking_status" name="Smoking_Status" placeholder="Smoking_Status">
+  
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
